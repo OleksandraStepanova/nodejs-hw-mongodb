@@ -7,7 +7,7 @@ export const createContactSchema = Joi.object({
     }),
     email: Joi.string().min(3).max(20).email(),
     isFavourite: Joi.boolean(),
-    contactType: Joi.string().valid('work', 'home', 'personal').required()
+    contactType: Joi.string().valid('work', 'home', 'personal').required(),
 });
 
 export const updateContactSchema = Joi.object({
