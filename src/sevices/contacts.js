@@ -39,10 +39,10 @@ export const createContact = async (userId, payload) => {
     return contact;
 };
 
-export const updateContact = async (contactId, payload, userId) => {
+export const updateContact = async (contactId, payload, userId,) => {
     const rowResult = await ContactsCollection.findOneAndUpdate(
         { _id: contactId, userId},
-        payload
+        payload,
     );
 
     if (!rowResult) return null;
