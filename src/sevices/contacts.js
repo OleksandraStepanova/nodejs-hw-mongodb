@@ -47,8 +47,10 @@ export const updateContact = async (contactId, payload, userId,) => {
 
     if (!rowResult) return null;
 
+    const result = await ContactsCollection.findById(contactId);
+
     return {
-        contact: rowResult,
+        contact: result,
     };
 
 };
