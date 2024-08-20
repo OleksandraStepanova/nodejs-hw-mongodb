@@ -131,7 +131,7 @@ export const resetPassword = async (payload) => {
     let entries;
 
     try {
-        entries=jwt.verify(payload.token, process.env.JWT_SECRET)
+        entries = jwt.verify(payload.token, process.env.JWT_SECRET);
     } catch (err) {
         if (err instanceof Error) throw createHttpError(401, err.message);
         throw err;

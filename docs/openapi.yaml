@@ -9,7 +9,7 @@ info:
 tags:
   - name: Contacts
     description: Operations about contacts.
-  - name: bearerAuth
+  - name: Auth
     description: Auth operations.
 servers:
   - url: http://localhost:3000
@@ -23,6 +23,25 @@ paths:
   /contacts/{id}:
     get:
       $ref: ../swagger/paths/contacts/{id}/get.yaml
+    delete:
+      $ref: ../swagger/paths/contacts/{id}/delete.yaml
+    patch:
+      $ref: ../swagger/paths/contacts/{id}/patch.yaml
+  /auth/register:
+    post:
+      $ref: ../swagger/paths/auth/register/register.yaml
+  /auth/login:
+    post:
+      $ref: ../swagger/paths/auth/login/login.yaml
+  /auth/logout:
+    post:
+      $ref: ../swagger/paths/auth/logout/logout.yaml
+  /auth/send-reset-email:
+    post:
+      $ref: ../swagger/paths/auth/sendResetEmail/sendResetEmail.yaml
+  /auth/reset-pwd:
+    post:
+      $ref: ../swagger/paths/auth/resetPwd/resetPwd.yaml
 components:
   securitySchemes:
     bearerAuth:
